@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rendering</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <wrapper class="wrapper">
+        <header class="header">
+            <h2>웹 렌더링</h2>
+            <div class="navigation">
+                <ul>
+                    <li onclick="scrollToSection('definition')">정의</li>
+                    <li onclick="scrollToSection('procedure')">과정</li>
+                    <li onclick="scrollToSection('type')">종류</li>
+                    <li onclick="scrollToSection('processing_method')">방식</li>
+                </ul>
+            </div>
+        </header>
+        <main class="main">
+            <section class="definition" id="definition">
+                <container class="container">
+                    <box class="text">
+                        <h3>웹 렌더링이란?</h3>
+                        <span>" 브라우저가 코드(HTML 등)를 받아서 사람이 볼 수 있는 화면으로 바꾸는 것 "<br>
+                                웹 브라우저가 HTML, CSS, JavaScript 코드를 해석해서<br>
+                                사람이 볼 수 있는 화면으로 보여주는 과정
+                        </span>
+                    </box>
+                    <box class="image">
+                        <img src="images/image_1.jpg" alt="images_1.jpg">
+                    </box>
+                </container>
+            </section>
+            <section class="procedure" id="procedure">
+                <container class="container">
+                    <box class="image">
+                        <img src="images/image_2.png" alt="image_2.png">
+                    </box>
+                    <box class="text">
+                        <h3>렌더링 과정</h3>
+                        <span>
+                            <ul>
+                                <li>1. 사용자가 웹사이트에 접속</li>
+                                <li>2. 브라우저가 HTML, CSS, JS 파일을 받아옴</li>
+                                <li>3. HTML을 DOM으로 변환</li>
+                                <li>4. CSS로 스타일 적용 → Render Tree 생성</li>
+                                <li>5. 브라우저가 최종 화면을 그림</li>
+                            </ul>
+                        </span>
+                    </box>
+                </container>
+            </section>
+            <section class="type fade-in-section" id="type">
+                <container class="container">
+                    <box class="ssr">
+                        <h3>SSR (서버 사이드 렌더링)</h3>
+                        <ul>
+                            <li>
+                                <h3>서버 사이드 렌더링이란?</h3>
+                                <span>웹 페이지를 브라우저가 아니라 "서버에서 미리 HTML 형태로 만들어서" 사용자에게 전달하는 방식</span>
+                            </li>
+                            <li>
+                                <h3>작동흐름</h3>
+                                <span>
+                                    <ul>
+                                        <li>1. 사용자가 웹사이트에 접속하면</li>
+                                        <li>2. 서버가 HTML을 "미리" 만들어서 사용자에게 보냄</li>
+                                        <li>3. 브라우저는 그 HTML을 바로 화면에 보여줌</li>
+                                    </ul>
+                                </span>
+                            </li>
+                            <li>
+                                <h3>SSR의 장점</h3>
+                                <span>
+                                    <ul>
+                                        <li>1. 초기 로딩 속도 빠름 (바로 HTML 보여주니까)</li>
+                                        <li>2. 검색 엔진(SEO)에 유리 (HTML에 텍스트가 바로 있음)</li>
+                                        <li>3. 소셜 미디어 공유 시 미리보기 잘 작동</li>
+                                    </ul>
+                                </span>
+                            </li>
+                            <li>
+                                <h3>SSR의 단점</h3>
+                                <span>
+                                    <ul>
+                                        <li>1. 사용자마다 서버가 HTML을 생성해야 해서 서버 부하 큼</li>
+                                        <li>2. 페이지 간 전환 시 전체 새로고침이 필요할 수 있음</li>
+                                        <li>3. 클라이언트 사이드 상호작용(JS)과 조합이 어려울 수도 있음</li>
+                                    </ul>
+                                </span>
+                            </li>
+                        </ul>
+                    </box>
+                    <box class="csr">
+                        <h3>CSR (클라이언트 사이드 렌더링)</h3>
+                        <ul>
+                            <li>
+                                <h3>클라이언트 사이드 렌더링이란?</h3>
+                                <span>웹 브라우저(사용자 측) 에서 JavaScript가 실행되어
+                                        웹 페이지를 동적으로 만들어서 화면에 렌더링하는 방식</span>
+                            </li>
+                            <li>
+                                <h3>작동흐름</h3>
+                                <span>
+                                    <ul>
+                                        <li>1. 사용자가 웹사이트에 접속하면</li>
+                                        <li>2. HTML은 거의 비어 있고, JavaScript 파일만 먼저 받아옴</li>
+                                        <li>3. JavaScript가 실행되면서 화면을 구성하고 내용 로딩</li>
+                                        <li>4. 최종적으로 페이지가 렌더링됨</li>
+                                    </ul>
+                                </span>
+                            </li>
+                            <li>
+                                <h3>CSR의 장점</h3>
+                                <span>
+                                    <ul>
+                                        <li>1. 페이지 전환 속도 빠름 (페이지 전체가 새로고침되지 않음)</li>
+                                        <li>2. 사용자 경험이 부드러움 (앱 같은 느낌)</li>
+                                        <li>3. 서버는 API만 제공하면 됨 (프론트엔드가 화면 구성 담당)</li>
+                                    </ul>
+                                </span>
+                            </li>
+                            <li>
+                                <h3>CSR의 단점</h3>
+                                <span>
+                                    <ul>
+                                        <li>1. 초기 로딩이 느릴 수 있음 (JS 다 받아야 화면 보임)</li>
+                                        <li>2. 검색 엔진(SEO)에 불리할 수 있음 (HTML에 내용이 없음)</li>
+                                        <li>3. JS 오류나 차단 시 페이지가 표시되지 않을 수도 있음</li>
+                                    </ul>
+                                </span>
+                            </li>
+                        </ul>
+                    </box>
+                </container>
+            </section>
+            <section class="processing_method image fade-in-section" id="processing_method">
+                <h3>렌더링별 작동 방식</h3>
+                <container class="container">
+                    <box class="ssr_image">
+                        <img src="images/image_3.png" alt="image_3.png">
+                    </box>
+                    <box class="csr_image">
+                        <img src="images/image_4.png" alt="image_4.png">
+                    </box>
+                </container>
+            </section>
+        </main>
+        <footer class="footer"></footer>
+    </wrapper>
+    <script src="js/script.js"></script>
+</body>
+</html>
