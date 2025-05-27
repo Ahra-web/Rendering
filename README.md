@@ -1,4 +1,4 @@
-# Rendering
+# Web rendering introduction page
 
 1. Rendering Definition
 2. Procedure
